@@ -1,3 +1,17 @@
-<p>
-  album works!
-</p>
+<div class="row">
+  <div class="col">
+    <table class="table">
+      <tr>
+        <th>Album owner Username</th>
+        <th>Title</th>
+      </tr>
+      <ng-container *ngFor="let album of albums">
+          <tr>
+            <td>{{album.userId}}</td>
+            <a href="/album/{{album.id}}"><td>{{album.title}}</td></a>
+          </tr>
+      </ng-container>
+    </table>
+  </div>
+
+</div>
