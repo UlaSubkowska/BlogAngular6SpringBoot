@@ -9,7 +9,8 @@ export class UserService {
   constructor(private http:HttpClient) { }
   baseUrl: string = 'https://jsonplaceholder.typicode.com/users';
 
-  getUser(id:number){
-    return this.http.get<User>(this.baseUrl + '/' + id);
+  async getUser(id:number){
+     let result = await this.http.get<User>(this.baseUrl + '/' + id).toPromise();
+     return result;
   }
 }

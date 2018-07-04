@@ -21,16 +21,14 @@ export class PhotoTileComponent implements OnInit {
 
     const dialogConfig = new MatDialogConfig();
 
-    dialogConfig.disableClose = true;
+    dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
     
     dialogConfig.data = {
-      id: 1,
-      title: 'Angular For Beginners'
+      title: this.photoDetails.title,
+      url: this.photoDetails.url
     };
     this.dialog.open(ImagePopupComponent, dialogConfig);
-
-    const dialogRef = this.dialog.open(ImagePopupComponent, dialogConfig);
 
   }
 }

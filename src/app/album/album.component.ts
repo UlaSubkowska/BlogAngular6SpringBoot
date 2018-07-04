@@ -6,7 +6,13 @@ import {Album} from '../model/album';
 import { UserService } from '../user-service/user-service.service';
 
 import {User} from '../model/user';
+import { Observable } from 'rxjs';
 
+export class AlbumContainer{
+  albums: Album[] = [];
+  username: string;
+  userid: number;
+}
 @Component({
   selector: 'app-album',
   templateUrl: './album.component.html',
@@ -14,29 +20,57 @@ import {User} from '../model/user';
 })
 export class AlbumComponent implements OnInit {
 
-  albums: Album[];
-  title = "album";
+  albumContainer: AlbumContainer[] = [];
+  private anyErrors: boolean;
+  public test: string = "collapseOne";
 
   constructor(private router: Router, private albumService: AlbumService, private userService: UserService) { 
     
   }
 
-  ngOnInit() {
-    this.albumService.getAllAlbums().subscribe(data => {
-      this.albums = data;
-      this.setUserNames(this.albums);
-    });
+  async ngOnInit() {
+    
+    let result = await this.albumService.getAllAlbums();
+    await this.setUserNames(result);
+    this.setContainer(result);
   }
 
-
-  setUserNames(albums: Album[]){
+  setContainer(albums: Album[]){
     albums.forEach(album => {
-      this.userService.getUser(parseInt(album.userId)).subscribe(data =>{
-        album.userId = data.username;
-      });
+      this.addAlbumToContainer(album)
     });
   }
 
+  addAlbumToContainer(album: Album){
+    let added:boolean = false;
+      this.albumContainer.forEach(item=>{
+        if(item.username === album.username){
+          item.albums.push(album);
+          added = true;
+        }
+      });
 
+      if(!added){
+        let newContainer = new AlbumContainer();
+        newContainer.albums.push(album);
+        newContainer.username = album.username;
+        newContainer.userid = album.userId;
 
+        this.albumContainer.push(newContainer);
+      }
+  }
+
+  async setUserNames(albums: Album[]){
+    for(let i=0;i<albums.length;i++){
+      if(albums[i].username == undefined){
+        let id = albums[i].userId;
+        let tempUser = await this.userService.getUser(id);
+        albums.forEach(item=>{
+          if(item.userId == id){
+            item.username = tempUser.username;
+          }
+        });
+      }
+    }
+  }
 }

@@ -11,7 +11,6 @@ import { PhotoTileComponent } from '../photo-tile/photo-tile.component';
 })
 export class AlbumDetailsComponent implements OnInit {
 
-  photoTiles: PhotoTileComponent[];
   photos: Photo[];
   constructor(private route: ActivatedRoute, private photoService: PhotoService) { }
 

@@ -1,5 +1,6 @@
 export class Album {
-    userId: string;
+    username:string;
+    userId: number;
     id: number;
     title: string;
 }

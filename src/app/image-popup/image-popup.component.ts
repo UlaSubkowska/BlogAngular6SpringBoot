@@ -9,23 +9,19 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 })
 export class ImagePopupComponent implements OnInit {
 
-  description:string;
+  photoUrl:string;
+  title: string;
 
   constructor(
     public dialogRef: MatDialogRef<ImagePopupComponent>,
       @Inject(MAT_DIALOG_DATA) data) {
 
-      this.description = data.title;
+      this.photoUrl = data.url;
+      this.title = data.title;
   }
 
   ngOnInit() {
       
-  }
-
-  save() {
-  }
-
-  close() {
   }
 
   onNoClick() {

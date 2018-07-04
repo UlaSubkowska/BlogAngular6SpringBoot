@@ -10,7 +10,7 @@ export class AlbumService {
   baseUrl: string = 'https://jsonplaceholder.typicode.com/albums';
 
   getAllAlbums(){
-    return this.http.get<Album[]>(this.baseUrl);
+    return this.http.get<Album[]>(this.baseUrl).toPromise();
   }
 
 

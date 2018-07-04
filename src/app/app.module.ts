@@ -15,6 +15,7 @@ import { PhotoTileComponent } from './photo-tile/photo-tile.component';
 import { ImagePopupComponent } from './image-popup/image-popup.component';
 import {MatDialogModule} from "@angular/material";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { UserAlbumsListComponent } from './user-albums-list/user-albums-list.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     AlbumDetailsComponent,
     PhotoTileComponent,
     ImagePopupComponent,
+    UserAlbumsListComponent,
   ],
   imports: [
     BrowserModule,
