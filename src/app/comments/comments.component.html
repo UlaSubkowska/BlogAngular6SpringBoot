@@ -1,0 +1,11 @@
+<h4>COMMENTS</h4>
+<div *ngIf="postComments">
+  <li *ngFor="let postComment of postComments">
+      name: {{postComment.name}}
+      <br>
+      comment: {{postComment.body}}
+      <br>
+      <br>
+  </li>
+</div>
+

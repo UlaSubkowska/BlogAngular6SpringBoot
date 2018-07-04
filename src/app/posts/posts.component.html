@@ -1,0 +1,10 @@
+<h2>Blog posts</h2>
+<div>
+<ul class="posts">
+  <li *ngFor="let post of posts">
+    <a routerLink="/detail/{{post.id}}">
+      TITLE: {{post.title}}
+    </a>
+  </li>
+</ul>
+</div>
