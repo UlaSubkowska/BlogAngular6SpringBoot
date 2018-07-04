@@ -1,3 +1,29 @@
+<<<<<<< HEAD
 <p>
   album works!
 </p>
+=======
+<div class="row">
+  <div class="col">
+    <div class="accordion" id="albumAccordion">
+      <div class="card" *ngFor="let item of albumContainer">
+        <div class="card-header" id="{{item.userid}}Heading">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" [attr.data-target]="'#' + item.userid + 'Collapse'" aria-expanded="true" [attr.aria-controls]="item.userid + 'Collapse'">
+              {{item.username}}
+            </button>
+          <div class="float-right">Albums number: {{item.albums.length}}</div>
+          </h5>
+        </div>
+        
+        <div id="{{item.userid}}Collapse" class="collapse" [attr.aria-labelledby]="item.userid+'Heading'" data-parent="#albumAccordion">
+          <div class="card-body">
+            <app-user-albums-list [albums]="item.albums"></app-user-albums-list>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+>>>>>>> photoAlbum
