@@ -17,6 +17,6 @@ export class DashbroadComponent implements OnInit {
     this.getPosts();
   }
   getPosts(): void {
-    this.postService.getPosts().subscribe(posts => this.posts = posts.slice(0, 9));
+    this.postService.getPosts().subscribe(posts => this.posts = posts.slice(0, 10));
   }
 }

@@ -11,7 +11,6 @@ import { PostService } from './../post.service';
 })
 export class CommentsComponent implements OnInit {
 
-  comments: Comment[];
   postComments: Comment;
 
   constructor(
@@ -20,12 +19,7 @@ export class CommentsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getComments();
     this.getPostComments();
-  }
-
-  getComments(): void {
-    this.postService.getComments().subscribe(comments => this.comments = comments);
   }
   getPostComments(): void {
     const id = +this.route.snapshot.paramMap.get('id');
