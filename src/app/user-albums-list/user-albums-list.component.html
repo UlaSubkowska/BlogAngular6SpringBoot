@@ -1,5 +1,5 @@
-<ul class="list-group">
+<ul class="list-group list-group-flush">
   <li class="list-group-item" *ngFor="let album of albums">
-    <a href="album/{{album.id}}/{{album.title}}">{{album.title}}</a>
+    <a class="link" href="album/{{album.id}}/{{album.title}}">{{album.title}}</a>
   </li>
 </ul>

@@ -4,19 +4,20 @@
     <div *ngIf="isLoading">
       <app-loading-image></app-loading-image>
     </div>
-    <div class="text-center" *ngIf="!isLoading"><h3>Our users photo albums</h3></div>
+    <div class="text-center" *ngIf="!isLoading">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Our users albums</h1>
+        </div>
+      </div>
+    </div>
     <div class="accordion" id="albumAccordion">
       <div class="card" *ngFor="let item of albumContainer">
         <div class="card-header" id="{{item.userid}}Heading">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" [attr.data-target]="'#' + item.userid + 'Collapse'" aria-expanded="true" [attr.aria-controls]="item.userid + 'Collapse'">
-              {{item.username}}
-            </button>
-            <h6>
-                <div class="float-right">Number of albums: {{item.albums.length}}</div>
-            </h6>
-          </h5>
-          
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" [attr.data-target]="'#' + item.userid + 'Collapse'" aria-expanded="true" [attr.aria-controls]="item.userid + 'Collapse'">
+               <h6 class="mb-0 inline-display">{{item.username}}</h6>
+          </button>
+          <div class="float-right"><h6 class="inline-display">Number of albums: {{item.albums.length}}</h6></div>
         </div>
         
         <div id="{{item.userid}}Collapse" class="collapse" [attr.aria-labelledby]="item.userid+'Heading'" data-parent="#albumAccordion">
