@@ -12,10 +12,12 @@ import { PhotoTileComponent } from '../photo-tile/photo-tile.component';
 export class AlbumDetailsComponent implements OnInit {
 
   photos: Photo[];
+  title: string;
   constructor(private route: ActivatedRoute, private photoService: PhotoService) { }
 
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
+    this.title = this.route.snapshot.paramMap.get('title');
     this.photoService.getPhotoAlbum(id).subscribe(data =>{
       this.photos = data;
     })

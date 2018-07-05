@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'posts', component: PostsComponent},
   {path: 'hello-world', component: HelloWorldComponent },
   {path: 'album', component: AlbumComponent},
-  {path: 'album/:id', component: AlbumDetailsComponent}
+  {path: 'album/:id/:title', component: AlbumDetailsComponent}
 ];
 
 @NgModule({

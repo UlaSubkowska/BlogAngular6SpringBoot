@@ -4,6 +4,7 @@
     <div *ngIf="isLoading">
       <app-loading-image></app-loading-image>
     </div>
+    <div class="text-center" *ngIf="!isLoading"><h3>Our users photo albums</h3></div>
     <div class="accordion" id="albumAccordion">
       <div class="card" *ngFor="let item of albumContainer">
         <div class="card-header" id="{{item.userid}}Heading">
@@ -11,8 +12,11 @@
             <button class="btn btn-link collapsed" type="button" data-toggle="collapse" [attr.data-target]="'#' + item.userid + 'Collapse'" aria-expanded="true" [attr.aria-controls]="item.userid + 'Collapse'">
               {{item.username}}
             </button>
-          <div class="float-right">Albums number: {{item.albums.length}}</div>
+            <h6>
+                <div class="float-right">Number of albums: {{item.albums.length}}</div>
+            </h6>
           </h5>
+          
         </div>
         
         <div id="{{item.userid}}Collapse" class="collapse" [attr.aria-labelledby]="item.userid+'Heading'" data-parent="#albumAccordion">
