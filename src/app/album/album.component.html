@@ -1,6 +1,9 @@
 
 <div class="row">
   <div class="col">
+    <div *ngIf="isLoading">
+      <app-loading-image></app-loading-image>
+    </div>
     <div class="accordion" id="albumAccordion">
       <div class="card" *ngFor="let item of albumContainer">
         <div class="card-header" id="{{item.userid}}Heading">

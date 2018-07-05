@@ -22,6 +22,7 @@ import { PostsComponent } from './posts/posts.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { DashbroadComponent } from './dashbroad/dashbroad.component';
 import { CommentsComponent } from './comments/comments.component';
+import { LoadingImageComponent } from './loading-image/loading-image.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { CommentsComponent } from './comments/comments.component';
     PostsComponent,
     PostDetailComponent,
     DashbroadComponent,
-    CommentsComponent
+    CommentsComponent,
+    LoadingImageComponent
   ],
   imports: [
     BrowserModule,

@@ -20,18 +20,19 @@ export class AlbumContainer{
 })
 export class AlbumComponent implements OnInit {
   albumContainer: AlbumContainer[] = [];
-  private anyErrors: boolean;
-  public test: string = "collapseOne";
+  private isLoading: boolean;
 
   constructor(private router: Router, private albumService: AlbumService, private userService: UserService) { 
     
   }
 
   async ngOnInit() {
-    
+    this.isLoading = true;
     let result = await this.albumService.getAllAlbums();
     await this.setUserNames(result);
     this.setContainer(result);
+
+    this.isLoading = false;
   }
 
   setContainer(albums: Album[]){
