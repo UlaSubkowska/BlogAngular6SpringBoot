@@ -5,6 +5,9 @@
 /tmp
 /out-tsc
 
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
 # dependencies
 /node_modules
 
@@ -16,6 +19,10 @@
 *.launch
 .settings/
 *.sublime-workspace
+.idea
+*.iws
+*.iml
+*.ipr
 
 # IDE - VSCode
 .vscode/*
