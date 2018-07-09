@@ -1,6 +1,6 @@
 package blog.services;
 
-import blog.entites.User;
+import blog.entites.BlogUser;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -9,30 +9,30 @@ import java.util.List;
 @Service
 public class UsersServicesProvider implements UsersServices {
 
-    List<User> users;
+    List<BlogUser> blogUsers;
 
     public UsersServicesProvider() {
-        users = new ArrayList<>();
+        blogUsers = new ArrayList<>();
 
-        User user = new User(1, "Leanne Graham", "Bret");
-        users.add(user);
+        BlogUser blogUser = new BlogUser(1, "Leanne Graham", "Bret");
+        blogUsers.add(blogUser);
 
-        user = new User(2, "Ervin Howell", "Antonette");
-        users.add(user);
+        blogUser = new BlogUser(2, "Ervin Howell", "Antonette");
+        blogUsers.add(blogUser);
 
-        user = new User(3, "Clementine Bauch", "Samantha");
-        users.add(user);
+        blogUser = new BlogUser(3, "Clementine Bauch", "Samantha");
+        blogUsers.add(blogUser);
 
     }
 
     @Override
-    public List<User> getAllUsers() {
-        return users;
+    public List<BlogUser> getAllUsers() {
+        return blogUsers;
     }
 
     @Override
-    public User getUser(int id) {
-        for (User item : users) {
+    public BlogUser getUser(int id) {
+        for (BlogUser item : blogUsers) {
             if (item.getId() == id) {
                 return item;
             }

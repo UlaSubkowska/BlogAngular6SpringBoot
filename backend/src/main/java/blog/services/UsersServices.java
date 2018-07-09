@@ -1,12 +1,12 @@
 package blog.services;
 
-import blog.entites.User;
+import blog.entites.BlogUser;
 
 import java.util.List;
 
 public interface UsersServices {
-    List<User> getAllUsers();
+    List<BlogUser> getAllUsers();
 
-    User getUser(int id);
+    BlogUser getUser(int id);
 }
 

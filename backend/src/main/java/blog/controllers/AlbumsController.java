@@ -2,7 +2,7 @@ package blog.controllers;
 
 import blog.entites.Album;
 import blog.entites.Photo;
-import blog.entites.User;
+import blog.entites.BlogUser;
 import blog.services.AlbumsServices;
 import blog.services.PhotosServices;
 import blog.services.UsersServices;
@@ -39,12 +39,12 @@ public class AlbumsController {
     }
 
     @RequestMapping("/users")
-    public List<User> getUsers() {
+    public List<BlogUser> getUsers() {
         return usersServices.getAllUsers();
     }
 
     @RequestMapping("/users/{id}")
-    public User getUser(@PathVariable("id") int id) {
+    public BlogUser getUser(@PathVariable("id") int id) {
         return usersServices.getUser(id);
     }
 }
