@@ -5,7 +5,7 @@
 /tmp
 /out-tsc
 
-/target/
+**/target/
 !.mvn/wrapper/maven-wrapper.jar
 
 # dependencies
