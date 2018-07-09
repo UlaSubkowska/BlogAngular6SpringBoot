@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
@@ -24,30 +25,39 @@ public class AlbumsController {
 
     @RequestMapping("/albums")
     public List<Album> getAlbums() {
-        return albumsServices.getAllAlbums();
+        List<Album> albums = new ArrayList<>();
+        albumsServices.findAll().forEach(albums::add);
+        return albums;
     }
 
     @RequestMapping("/photos")
     public List<Photo> getPhotos(@RequestParam(value = "albumId", defaultValue = "all") String id) {
         if (id.equals("all")) {
-            return photosServices.getAllPhotos();
+            List<Photo> photos = new ArrayList<>();
+            photosServices.findAll().forEach(photos::add);
+            return photos;
         } else {
-
             int albumId = Integer.parseInt(id);
-            return photosServices.getAlbumPhotos(albumId);
+            return photosServices.findByAlbumId(albumId);
         }
     }
 
     @RequestMapping("/users")
     public List<BlogUser> getUsers() {
-        return usersServices.getAllUsers();
+        List<BlogUser> blogUsers = new ArrayList<>();
+        usersServices.findAll().forEach(blogUsers::add);
+        return blogUsers;
     }
 
     @RequestMapping("/users/{id}")
     public BlogUser getUser(@PathVariable("id") int id) {
-        return usersServices.getUser(id);
+        if (usersServices.findById(id).isPresent())
+            return usersServices.findById(id).get();
+        else
+            return null;
     }
 }
+
 
 
 
