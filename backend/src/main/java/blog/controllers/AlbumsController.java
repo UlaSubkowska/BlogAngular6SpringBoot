@@ -28,23 +28,23 @@ public class AlbumsController {
     }
 
     @RequestMapping("/photos")
-    public List<Photo> getPhotos(@RequestParam(value = "albumId", defaultValue="all") String id){
-        if (id.equals("all")){
+    public List<Photo> getPhotos(@RequestParam(value = "albumId", defaultValue = "all") String id) {
+        if (id.equals("all")) {
             return photosServices.getAllPhotos();
-        }
-        else {
+        } else {
+
             int albumId = Integer.parseInt(id);
             return photosServices.getAlbumPhotos(albumId);
         }
     }
 
     @RequestMapping("/users")
-    public List<User> getUsers(){
+    public List<User> getUsers() {
         return usersServices.getAllUsers();
     }
 
     @RequestMapping("/users/{id}")
-    public User getUser(@PathVariable("id") int id){
+    public User getUser(@PathVariable("id") int id) {
         return usersServices.getUser(id);
     }
 }

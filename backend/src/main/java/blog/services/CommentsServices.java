@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface CommentsServices {
     List<Comment> getAllComments();
+
     List<Comment> getPostComments(int id);
 }

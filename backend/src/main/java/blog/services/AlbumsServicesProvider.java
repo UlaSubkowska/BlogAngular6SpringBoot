@@ -11,7 +11,8 @@ public class AlbumsServicesProvider implements AlbumsServices {
 
     private List<Album> albums;
 
-    public AlbumsServicesProvider(){
+
+    public AlbumsServicesProvider() {
         albums = new ArrayList<>();
 
         Album album = new Album(1, 1, "quidem molestiae enim");

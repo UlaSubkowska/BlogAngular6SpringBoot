@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class CommentsServicesProvider  implements CommentsServices{
+public class CommentsServicesProvider implements CommentsServices {
     List<Comment> comments;
 
-    public CommentsServicesProvider(){
+    public CommentsServicesProvider() {
         comments = new ArrayList<>();
 
         Comment comment = new Comment(1, 1, "id labore ex et quam laborum", "Eliseo@gardner.biz", "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium");
@@ -33,9 +33,9 @@ public class CommentsServicesProvider  implements CommentsServices{
     @Override
     public List<Comment> getPostComments(int id) {
         List<Comment> postComments = new ArrayList<>();
-        for (Comment comment: comments) {
-            if (comment.getPostId()==id){
-            postComments.add(comment);
+        for (Comment comment : comments) {
+            if (comment.getPostId() == id) {
+                postComments.add(comment);
             }
         }
         return postComments;

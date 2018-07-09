@@ -1,4 +1,5 @@
 package blog.controllers;
+
 import blog.entites.Comment;
 import blog.entites.Post;
 import blog.services.CommentsServices;
@@ -31,7 +32,7 @@ public class PostsController {
     }
 
     @RequestMapping("/posts/{id}/comments")
-    public List<Comment> getPostComments(@PathVariable("id") int id){
+    public List<Comment> getPostComments(@PathVariable("id") int id) {
         return commentsServices.getPostComments(id);
     }
 

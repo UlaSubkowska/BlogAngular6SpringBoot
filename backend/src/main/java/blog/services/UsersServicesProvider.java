@@ -7,11 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class UsersServicesProvider implements UsersServices{
+public class UsersServicesProvider implements UsersServices {
 
     List<User> users;
 
-    public UsersServicesProvider(){
+    public UsersServicesProvider() {
         users = new ArrayList<>();
 
         User user = new User(1, "Leanne Graham", "Bret");
@@ -32,8 +32,8 @@ public class UsersServicesProvider implements UsersServices{
 
     @Override
     public User getUser(int id) {
-        for (User item: users) {
-            if (item.getId()==id){
+        for (User item : users) {
+            if (item.getId() == id) {
                 return item;
             }
         }
