@@ -31,15 +31,15 @@ public class AlbumsController {
     }
 
     @RequestMapping("/photos")
-    public List<Photo> getPhotos(@RequestParam(value = "albumId", defaultValue = "all") String id) {
-        if (id.equals("all")) {
-            List<Photo> photos = new ArrayList<>();
-            photosServices.findAll().forEach(photos::add);
-            return photos;
-        } else {
-            int albumId = Integer.parseInt(id);
-            return photosServices.findByAlbumId(albumId);
-        }
+    public List<Photo> getPhotos() {
+        List<Photo> photos = new ArrayList<>();
+        photosServices.findAll().forEach(photos::add);
+        return photos;
+    }
+
+    @RequestMapping("photos/albumId/{id}")
+    public List<Photo> getPhotosFromAlbum(@PathVariable("id") int albumId){
+        return photosServices.findByAlbumId(albumId);
     }
 
     @RequestMapping("/users")
