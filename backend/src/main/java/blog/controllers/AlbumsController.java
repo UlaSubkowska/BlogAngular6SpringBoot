@@ -7,16 +7,14 @@ import blog.services.AlbumsServices;
 import blog.services.PhotosServices;
 import blog.services.UsersServices;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
 @RestController
+@CrossOrigin
 public class AlbumsController {
 
     private AlbumsServices albumsServices;

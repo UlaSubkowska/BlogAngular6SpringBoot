@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient} from '@angular/common/http';
-
 import { Post } from './post';
 import { Comment } from './comment';
+import * as globals from './globals';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
 
-  private postsUrl = 'https://jsonplaceholder.typicode.com/posts';
+  private postsUrl = globals.apiUrl + '/posts';
 
   constructor(
     private http: HttpClient,
@@ -27,3 +27,6 @@ export class PostService {
     return this.http.get<Comment>(this.postsUrl + '/' + id + '/comments');
   }
 }
+
+
+

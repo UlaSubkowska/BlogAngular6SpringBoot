@@ -20,6 +20,6 @@ public class Photo {
     private int id;
     private String title;
     private String url;
-    private String thumbnaiUrl;
+    private String thumbnailUrl;
 }
 
