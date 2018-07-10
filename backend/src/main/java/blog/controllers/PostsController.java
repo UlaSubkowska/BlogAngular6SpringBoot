@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
@@ -22,18 +23,22 @@ public class PostsController {
 
     @RequestMapping("/posts/{id}")
     public Post getPost(@PathVariable("id") int id) {
-        Post post = postsServices.getPost(id);
-        return post;
+        if (postsServices.findById(id).isPresent())
+            return postsServices.findById(id).get();
+        else
+            return null;
     }
 
     @RequestMapping("/posts")
     public List<Post> getPosts() {
-        return postsServices.getAllPosts();
+        List<Post> posts = new ArrayList<>();
+        postsServices.findAll().forEach(posts::add);
+        return posts;
     }
 
     @RequestMapping("/posts/{id}/comments")
     public List<Comment> getPostComments(@PathVariable("id") int id) {
-        return commentsServices.getPostComments(id);
+        return commentsServices.findByPostId(id);
     }
 
 }
