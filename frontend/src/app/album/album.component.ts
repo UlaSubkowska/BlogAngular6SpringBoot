@@ -20,7 +20,7 @@ export class AlbumContainer{
 })
 export class AlbumComponent implements OnInit {
   albumContainer: AlbumContainer[] = [];
-  private isLoading: boolean;
+  public isLoading: boolean;
 
   constructor(private router: Router, private albumService: AlbumService, private userService: UserService) { 
     
