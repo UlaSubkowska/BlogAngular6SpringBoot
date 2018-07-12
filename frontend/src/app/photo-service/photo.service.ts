@@ -11,6 +11,6 @@ export class PhotoService {
   private baseUrl: string = globals.apiUrl + '/photos';
 
   getPhotoAlbum(id: number) {
-    return this.http.get<Photo[]>(this.baseUrl + '/' + "albumId/" + id);
+    return this.http.get<Photo[]>(this.baseUrl + '/' + 'albumId/' + id);
   }
 }

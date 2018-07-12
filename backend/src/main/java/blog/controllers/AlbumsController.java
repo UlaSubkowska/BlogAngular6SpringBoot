@@ -35,7 +35,7 @@ public class AlbumsController {
         return photos;
     }
 
-    @RequestMapping("photos/albumId/{id}")
+    @RequestMapping("/photos/albumId/{id}")
     public List<Photo> getPhotosFromAlbum(@PathVariable("id") int albumId){
         return photosServices.findByAlbumId(albumId);
     }

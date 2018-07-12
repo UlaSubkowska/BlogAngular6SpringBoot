@@ -11,7 +11,7 @@ export class UserService {
   baseUrl: string = globals.apiUrl + '/users';
 
   async getUser(id: number) {
-     let result = await this.http.get<User>(this.baseUrl + '/' + id).toPromise();
+     const result = await this.http.get<User>(this.baseUrl + '/' + id).toPromise();
      return result;
   }
 }
