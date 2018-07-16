@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -21,6 +22,7 @@ public class Post {
     private int id;
     private String title;
     @Lob
+    @Type(type = "org.hibernate.type.TextType")
     private String body;
 
 }
