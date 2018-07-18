@@ -1,7 +1,7 @@
-<h2>Blog posts</h2>
+<h2 id="pageInvite">Blog posts</h2>
 <ul class="list-group">
     <li *ngFor="let post of posts" class="list-group-item">
-      <a routerLink="/detail/{{post.id}}">
+      <a routerLink="/detail/{{post.id}}" id="postLink{{post.id}}">
         {{post.id}}. {{post.title}}
       </a>
     </li>

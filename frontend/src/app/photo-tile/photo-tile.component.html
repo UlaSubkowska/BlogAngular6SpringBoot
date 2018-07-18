@@ -1,6 +1,6 @@
 
     <div class="card" style="width: 15rem;">
-      <img class="card-img-top" (click)="openFullImage()" src="{{photoDetails.thumbnailUrl}}">
+      <img class="card-img-top" id="{{photoDetails.id}}PhotoDetail" (click)="openFullImage()" src="{{photoDetails.thumbnailUrl}}">
       <div class="card-body">
         <h5 class="card-title">{{photoDetails.title}}</h5>
       </div>

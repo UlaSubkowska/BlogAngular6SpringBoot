@@ -1,7 +1,7 @@
 <h4>COMMENTS</h4>
 <div *ngIf="postComments">
 <ul *ngFor="let postComment of postComments" class="list-group list-group-flush">
-  <li class="list-group-item">
+  <li class="list-group-item" id="postComment">
     {{postComment.name}}
     <br>
     <small>{{postComment.body}}</small>

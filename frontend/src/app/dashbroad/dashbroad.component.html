@@ -1,7 +1,7 @@
-<h2>Last 10 articles</h2>
+<h2 id="pageInvite">Last 10 articles</h2>
 <div class="list-group">
   <a *ngFor="let post of posts" routerLink="/detail/{{post.id}}">
-    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+    <a id="postLink" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
       <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1">{{post.title}}</h5>
         <small>{{post.id}}</small>
