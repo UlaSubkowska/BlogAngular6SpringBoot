@@ -1,4 +1,4 @@
-package selenium;
+package seleniumOld;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -9,16 +9,16 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.List;
 
-public class GetPostDetailFromAllPostsList {
+public class GetPostDetailFromDashbroad {
     public static final String baseUrl = "http://localhost:80";
     public static final String geckodriverLocalPath = "../tool/geckodriver";
     public static final String expectedTitle = "Blog";
 
     @Test
     public void GetPostDetailFromAllPostsList () {
-        // Detail of current fifth post
-        String expectedPostTitle = "nesciunt quas odio";
-        String expectedPostBody = "repudiandae veniam quaerat sunt sed\\nalias aut fugiat sit autem sed est\\nvoluptatem omnis possimus esse voluptatibus quis\\nest aut tenetur dolor neque";
+        // Detail of current first post
+        String expectedPostTitle = "sunt aut facere repellat provident occaecati excepturi optio reprehenderit";
+        String expectedPostBody = "quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto";
         int expectedNumberOfComments = 5;
 
         System.setProperty("webdriver.gecko.driver", geckodriverLocalPath);
@@ -30,10 +30,8 @@ public class GetPostDetailFromAllPostsList {
         System.out.println("Page title is: " + title);
         Assert.assertEquals(expectedTitle, title);
 
-        WebElement allposts = driver.findElement(By.linkText("All posts"));
-        allposts.click();
 
-        WebElement post = driver.findElement(By.partialLinkText("nesciunt quas odio"));
+        WebElement post = driver.findElement(By.partialLinkText("sunt aut facere repellat provident occaecati excepturi optio reprehenderit"));
         post.click();
 
         String postTitle = driver.findElement(By.id("postTitle")).getText();
