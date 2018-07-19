@@ -27,6 +27,7 @@ public class PostDetailTests extends BaseTest {
     public void setupEachTest() throws InterruptedException {
         homePage =new HomePage(driver);
         postDetailPage = new PostDetailPage(driver);
+
         homePage.goToDashbroad();
         Thread.sleep(500);
     }

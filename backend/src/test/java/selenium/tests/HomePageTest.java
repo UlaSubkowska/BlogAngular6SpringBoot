@@ -8,8 +8,7 @@ public class HomePageTest extends BaseTest {
     private static final String EXPECTED_TITLE = "Blog";
 
     @Test
-    // to do - change test name!!!
-    public void testPageTitle() throws InterruptedException {
+    public void Given_VerifyPageTitle_When_OpenPageUsingWebDriver_Then_AssertExpectedTitle () throws InterruptedException {
         homePage =new HomePage(driver);
         homePage.goToDashbroad();
         Assert.assertEquals(driver.getTitle(), EXPECTED_TITLE);
