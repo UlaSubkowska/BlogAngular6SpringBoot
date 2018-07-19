@@ -1,11 +1,8 @@
 package selenium.pages;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-import java.util.List;
 
 public class PostDetailPage extends BasePage {
 
@@ -14,11 +11,11 @@ public class PostDetailPage extends BasePage {
     }
 
     public String getPostTitle(){
-        return driver.findElement(By.id("postTitle")).getText();
+        return readText(By.id("postTitle"));
     }
 
     public String getPostBody(){
-        return driver.findElement(By.id("postBody")).getText();
+        return readText(By.id("postBody"));
     }
 
     public int getNumberOfComments(){

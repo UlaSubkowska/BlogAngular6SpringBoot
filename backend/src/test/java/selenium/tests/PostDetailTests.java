@@ -51,6 +51,5 @@ public class PostDetailTests extends BaseTest {
         Assert.assertEquals(EXPECTED_POST_TITLE_14, postDetailPage.getPostTitle());
         Assert.assertEquals(EXPECTED_POST_BODY_14, postDetailPage.getPostBody());
         Assert.assertEquals(EXPECTED_NUMBER_OF_COMMENTS_14, postDetailPage.getNumberOfComments());
-
     }
 }

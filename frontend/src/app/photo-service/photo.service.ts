@@ -10,7 +10,13 @@ export class PhotoService {
   constructor(private http: HttpClient) { }
   private baseUrl: string = globals.apiUrl + '/photos';
 
-  getPhotoAlbum(id: number) {
-    return this.http.get<Photo[]>(this.baseUrl + '/' + 'albumId/' + id);
-  }
+  // for workin on container version
+    getPhotoAlbum(id: number) {
+      return this.http.get<Photo[]>(this.baseUrl + '/' + 'albumId/' + id);
+    }
+
+    // for out api version
+/*   getPhotoAlbum(id: number) {
+    return this.http.get<Photo[]>(this.baseUrl + '?' + 'albumId=' + id);
+  } */
 }

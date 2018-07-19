@@ -1,6 +1,5 @@
 package selenium.pages;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -17,15 +16,15 @@ public class HomePage extends BasePage {
     }
 
     public void goToAllPosts() {
-        driver.findElement(By.linkText("All posts")).click();
+        click(By.linkText("All posts"));
     }
 
     public void goToAlbums() {
-        driver.findElement(By.linkText("Albums")).click();
+        click(By.linkText("Albums"));
     }
 
     public void goToPost(String postTitle){
-        driver.findElement(By.partialLinkText(postTitle)).click();
+        click(By.partialLinkText(postTitle));
     }
 
 }

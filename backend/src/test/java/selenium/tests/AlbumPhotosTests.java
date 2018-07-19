@@ -5,7 +5,6 @@ import org.junit.Before;
 import org.junit.Test;
 import selenium.pages.AlbumPage;
 import selenium.pages.HomePage;
-import selenium.pages.PostDetailPage;
 
 public class AlbumPhotosTests extends BaseTest {
 
@@ -26,8 +25,6 @@ public class AlbumPhotosTests extends BaseTest {
     private static final int ALBUM_ID_3 = 27;
     private static final int PHOTO_ID = 1302;
 
-    private static final String EXPECTED_ALBUM_TITLE_3 = "id non nostrum expedita";
-    private static final int EXPECTED_ALBUM_PHOTOS_NUMBER_3 = 50;
 
     @Before
     public void setupEachTest() throws InterruptedException {
@@ -41,13 +38,17 @@ public class AlbumPhotosTests extends BaseTest {
         Thread.sleep(500);
     }
 
+    //TO DO
+    //ustawic kolejnosc wykonywania testow, lub atrybuty oczekiwania
+
     @Test
     public void Given_VerifyUserAlbum_When_DisplayThumbnailsPhotosInTheAlbum_Then_AssertAlbumContent() throws InterruptedException {
         albumPage.displayUserAlbums(USER_ID_5);
         Assert.assertEquals(EXPECTED_USER_NAME_5, albumPage.getUserName(USER_ID_5));
+        Thread.sleep(500);
 
         albumPage.goToUserAlbum(ALBUM_ID_5);
-        Assert.assertEquals(EXPECTED_ALBUM_TITLE_5, albumPage.getAlbumName());
+        Assert.assertEquals(EXPECTED_ALBUM_TITLE_5, albumPage.getAlbumTitle());
         Assert.assertEquals(EXPECTED_ALBUM_PHOTOS_NUMBER_5, albumPage.getNumberOfPhotos());
     }
 
@@ -57,6 +58,8 @@ public class AlbumPhotosTests extends BaseTest {
         Assert.assertEquals(EXPECTED_USER_NAME_3, albumPage.getUserName(USER_ID_3));
 
         albumPage.goToUserAlbum(ALBUM_ID_3);
+        Thread.sleep(500);
         albumPage.popupPhoto(PHOTO_ID);
+        Thread.sleep(500);
     }
 }
