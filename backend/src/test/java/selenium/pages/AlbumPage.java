@@ -13,4 +13,8 @@ public class AlbumPage extends BasePage {
     public void displayUserAlbums(int userId){
         driver.findElement(By.id(Integer.toString(userId)+"Button")).click();
     }
+
+    public String getUserName(int userId){
+        return driver.findElement(By.id(Integer.toString(userId)+"Button")).getText();
+    }
 }

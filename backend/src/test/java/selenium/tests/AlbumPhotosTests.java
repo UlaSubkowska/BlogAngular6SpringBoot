@@ -34,6 +34,7 @@ public class AlbumPhotosTests extends BaseTest {
         Thread.sleep(500);
 
         albumPage.displayUserAlbums(USER_ID);
+        Assert.assertEquals(EXPECTED_USER_NAME, albumPage.getUserName(USER_ID));
 
     }
 }
