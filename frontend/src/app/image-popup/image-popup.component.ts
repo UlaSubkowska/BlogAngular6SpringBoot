@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material";
-import {FormBuilder, FormGroup} from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-image-popup',
@@ -9,19 +9,19 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 })
 export class ImagePopupComponent implements OnInit {
 
-  photoUrl:string;
+  photoUrl: string;
   title: string;
 
   constructor(
     public dialogRef: MatDialogRef<ImagePopupComponent>,
-      @Inject(MAT_DIALOG_DATA) data) {
+    @Inject(MAT_DIALOG_DATA) data) {
 
-      this.photoUrl = data.url;
-      this.title = data.title;
+    this.photoUrl = data.url;
+    this.title = data.title;
   }
 
   ngOnInit() {
-      
+
   }
 
   onNoClick() {

@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Photo } from '../model/photo';
 import { ImagePopupComponent } from '../image-popup/image-popup.component';
 
-import {MatDialog, MatDialogConfig} from "@angular/material";
+import { MatDialog, MatDialogConfig } from '@angular/material';
 
 @Component({
   selector: 'app-photo-tile',
@@ -12,18 +12,18 @@ import {MatDialog, MatDialogConfig} from "@angular/material";
 export class PhotoTileComponent implements OnInit {
 
   @Input() photoDetails: Photo;
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
   }
 
-  openFullImage(){
+  openFullImage() {
 
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
-    
+
     dialogConfig.data = {
       title: this.photoDetails.title,
       url: this.photoDetails.url
