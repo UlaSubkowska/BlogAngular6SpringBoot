@@ -1,6 +1,8 @@
 package selenium.tests;
 
+import org.junit.Assert;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import selenium.pages.HomePage;
 import selenium.pages.PostDetailPage;
 
@@ -26,14 +28,14 @@ public class PostDetailTests extends BaseTest {
         PostDetailPage postDetailPage = new PostDetailPage(driver);
 
         homePage.goToDashbroad();
-        homePage.verifyTitle(EXPECTED_TITLE);
+        Assert.assertEquals(EXPECTED_TITLE, driver.getTitle());
         Thread.sleep(500);
 
         homePage.goToPost(EXPECTED_POST_TITLE_5);
 
-        postDetailPage.verifyPostTitle(EXPECTED_POST_TITLE_5);
-        postDetailPage.verifyPostBody(EXPECTED_POST_BODY_5);
-        postDetailPage.verifyNumberOfComments(EXPECTED_NUMBER_OF_COMMENTS_5);
+        Assert.assertEquals(EXPECTED_POST_TITLE_5, postDetailPage.getPostTitle());
+        Assert.assertEquals(EXPECTED_POST_BODY_5, postDetailPage.getPostBody());
+        Assert.assertEquals(EXPECTED_NUMBER_OF_COMMENTS_5, postDetailPage.getNumberOfComments());
     }
 
 
@@ -43,16 +45,17 @@ public class PostDetailTests extends BaseTest {
         PostDetailPage postDetailPage = new PostDetailPage(driver);
 
         homePage.goToDashbroad();
-        homePage.verifyTitle(EXPECTED_TITLE);
+        Assert.assertEquals(EXPECTED_TITLE, driver.getTitle());
         Thread.sleep(500);
 
         homePage.goToAllPosts();
         Thread.sleep(500);
         homePage.goToPost(EXPECTED_POST_TITLE_14);
 
-        postDetailPage.verifyPostTitle(EXPECTED_POST_TITLE_14);
-        postDetailPage.verifyPostBody(EXPECTED_POST_BODY_14);
-        postDetailPage.verifyNumberOfComments(EXPECTED_NUMBER_OF_COMMENTS_14);
+        Assert.assertEquals(EXPECTED_POST_TITLE_14, postDetailPage.getPostTitle());
+        Assert.assertEquals(EXPECTED_POST_BODY_14, postDetailPage.getPostBody());
+        Assert.assertEquals(EXPECTED_NUMBER_OF_COMMENTS_14, postDetailPage.getNumberOfComments());
+
     }
 
 }

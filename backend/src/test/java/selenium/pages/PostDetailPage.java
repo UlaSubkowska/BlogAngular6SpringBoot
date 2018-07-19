@@ -13,18 +13,16 @@ public class PostDetailPage extends BasePage {
         super(driver);
     }
 
-    public void verifyPostTitle(String expectedPostTitle){
-        Assert.assertEquals(expectedPostTitle, driver.findElement(By.id("postTitle")).getText());
+    public String getPostTitle(){
+        return driver.findElement(By.id("postTitle")).getText();
     }
 
-    public void verifyPostBody(String expectedPostBody){
-        Assert.assertEquals(expectedPostBody, driver.findElement(By.id("postBody")).getText());
+    public String getPostBody(){
+        return driver.findElement(By.id("postBody")).getText();
     }
 
-    public void verifyNumberOfComments(int expectedNumberOfComments){
-        List<WebElement> postComments = driver.findElements(By.id("postComment"));
-        Assert.assertEquals(postComments.size(), expectedNumberOfComments);
+    public int getNumberOfComments(){
+        return driver.findElements(By.id("postComment")).size();
     }
-
 
 }

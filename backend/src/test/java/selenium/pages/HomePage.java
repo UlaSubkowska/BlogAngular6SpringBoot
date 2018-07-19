@@ -28,8 +28,4 @@ public class HomePage extends BasePage {
         driver.findElement(By.partialLinkText(postTitle)).click();
     }
 
-    public void verifyTitle(String expectedTitle){
-        Assert.assertEquals(expectedTitle, driver.getTitle());
-    }
-
 }
