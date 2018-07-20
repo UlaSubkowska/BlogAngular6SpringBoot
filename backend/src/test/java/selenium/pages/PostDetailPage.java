@@ -19,7 +19,7 @@ public class PostDetailPage extends BasePage {
     }
 
     public int getNumberOfComments(){
-        return driver.findElements(By.id("postComment")).size();
+        return countElements(By.id("postComment"));
     }
 
 }

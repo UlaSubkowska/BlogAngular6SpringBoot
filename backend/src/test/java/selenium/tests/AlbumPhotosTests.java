@@ -2,10 +2,12 @@ package selenium.tests;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import selenium.pages.AlbumPage;
 import selenium.pages.HomePage;
 
+@FixMethodOrder
 public class AlbumPhotosTests extends BaseTest {
 
     AlbumPage albumPage;
@@ -37,9 +39,6 @@ public class AlbumPhotosTests extends BaseTest {
         homePage.goToAlbums();
         Thread.sleep(500);
     }
-
-    //TO DO
-    //ustawic kolejnosc wykonywania testow, lub atrybuty oczekiwania
 
     @Test
     public void Given_VerifyUserAlbum_When_DisplayThumbnailsPhotosInTheAlbum_Then_AssertAlbumContent() throws InterruptedException {

@@ -25,7 +25,7 @@ public class AlbumPage extends BasePage {
     }
 
     public int getNumberOfPhotos(){
-        return driver.findElements(By.id("photo")).size();
+        return countElements(By.id("photo"));
     }
 
     public void popupPhoto(int photoId){

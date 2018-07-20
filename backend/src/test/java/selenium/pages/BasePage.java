@@ -18,6 +18,7 @@ public class BasePage {
         return driver.findElement(elementLocation).getText();
     }
 
-    //TO DO
-    // - countElements method!!
+    public int countElements(By elementLocation) {
+        return driver.findElements(elementLocation).size();
+    }
 }
